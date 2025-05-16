@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Generator 🎲</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    #output {
+      font-size: 1.5rem;
+      margin: 30px 0;
+      color: #333;
+      max-width: 500px;
+    }
+
+    button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #ff3b3b;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔮 Random Generator</h1>
+  <p id="output">Click the button for a random surprise!</p>
+  <button onclick="generate()">Generate 🎲</button>
+
+  <script>
+    const items = [
+      "😂 Joke: Why don’t skeletons fight each other? They don’t have the guts.",
+      "📚 Fact: Bananas are berries, but strawberries are not.",
+      "🔮 Fortune: You will find a taco when you least expect it.",
+      "🐶 Fact: Dogs can smell your feelings.",
+      "🤪 Joke: Parallel lines have so much in common… it’s a shame they’ll never meet.",
+      "🌌 Fortune: The universe has plans for you (mostly snacks).",
+      "🧠 Fact: Octopuses have three hearts!",
+      "🕺 Joke: Why did the computer show up at work late? It had a hard drive."
+    ];
+
+    function generate() {
+      const output = document.getElementById("output");
+      const randomItem = items[Math.floor(Math.random() * items.length)];
+      output.textContent = randomItem;
+    }
+  </script>
+</body>
+</html>
